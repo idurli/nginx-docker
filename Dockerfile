@@ -1,3 +1,4 @@
+#!/bin/sh
 FROM alpine:3.4
 
 ENV NGINX_VERSION 1.10.2
@@ -150,3 +151,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80 443 1935
 
 CMD ["nginx", "-g", "daemon off;"]
+
+# For running the image locally
+# docker run -p 80:80 -p 443:443 -p 1935:1935 --name nginx cinchcast/nginx
